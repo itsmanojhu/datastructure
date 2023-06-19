@@ -7,6 +7,19 @@ public class List implements ListSkeleton {
     Node tail;
     int size;
 
+    public void reverseList() {
+        Node current = head;
+        Node prev=null,next=null;
+
+        while(current!=null){
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+    }
+
     private static class Node{
         java.lang.Integer data;
         Node next;
