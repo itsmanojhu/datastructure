@@ -6,7 +6,7 @@ public class SelectionSort {
     public static void main(String[] args) {
         int a[] = {12, 11, 13, 5, 6 ,14};
         Arrays.stream(a).forEach(b -> System.out.print(b +","));
-        //selectionSort(a);
+        selectionSort(a);
         a = mergeSort(a);
         System.out.println();
         Arrays.stream(a).forEach(b -> System.out.print(b +","));

@@ -38,9 +38,17 @@ public class MergeSort {
     private static int[] merge(int[] left, int[] right) {
         int result[] = new int [left.length+right.length];
         int leftPointer = 0,rightPointer=0,resultPointer=0;
-        while(leftPointer<left.length || rightPointer<right.length){
-            if(leftPointer<left.length && rightPointer<right.length){
-
+        while(left.length>leftPointer || right.length>rightPointer){
+            if(left.length>leftPointer && right.length>rightPointer){
+                if(left[leftPointer]>right[rightPointer]){
+                    result[resultPointer++] = right[rightPointer++];
+                } else {
+                    result[resultPointer++] = left[leftPointer++];
+                }
+            } else if(left.length>leftPointer){
+                result[resultPointer++] = left[leftPointer++];
+            } else if(right.length>rightPointer){
+                result[resultPointer++] = right[rightPointer++];
             }
         }
         return result;
